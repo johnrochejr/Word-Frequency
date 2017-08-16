@@ -17,11 +17,13 @@ class WordfreqTest < Minitest::Test
   end
 
   def test_word_not_present_has_freq_of_0
+    skip
     wf = Wordfreq.new fullpath('seneca_falls.txt')
     assert_equal 0, wf.frequency('computer')
   end
 
   def test_frequencies
+    skip
     wf = Wordfreq.new fullpath('emancipation_proclamation.txt')
     frequencies = wf.frequencies
     assert_equal 2, frequencies['virtue']
@@ -29,6 +31,7 @@ class WordfreqTest < Minitest::Test
   end
 
   def test_top_words
+    skip
     wf = Wordfreq.new fullpath('seneca_falls.txt')
     top_words = wf.top_words(5)
     assert_equal [
@@ -43,6 +46,7 @@ class WordfreqTest < Minitest::Test
   end
 
   def test_report
+    skip
     expected_output = <<EOF
     her | 33 *********************************
     all | 12 ************
