@@ -17,25 +17,23 @@ class Wordfreq
         @words[word] = 1
       end
     end
-    @words
+    top_words(5)
   end
 
   def frequency(word)
-    @words[word]
+    if @words.has_key?(word)
+      return frequencies[word]
+    else
+      0
+    end
   end
 
-
-
-
-
   def frequencies
-    # How can I get words to show: make a has to list out unique words
-    # each time it
-  #  puts @words.each_with_object(Hash.new(0))
-
+    @words
   end
 
   def top_words(number)
+    @words.sort_by {|word, count| count}.reverse.take(5)
   end
 
   def print_report
